@@ -49,7 +49,6 @@ def text_to_text_model(message: str) -> str:
 def text_to_image_model(prompt: str | list[dict[str, str]]) -> None:
     if not isinstance(prompt, str):
         prompt = str(prompt)
-    # prompt = prompt.replace("[{'generated_text': \"Rewrite this as a detailed prompt: ", "").replace("\"}]", "")
 
     model_id = "sd-legacy/stable-diffusion-v1-5"
     pipe = StableDiffusionPipeline.from_pretrained(
